@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  border: 1px solid #ccc;
+  perspective: 1200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+}
+#cubes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  min-width: 100vw;
+  height: 250px;
+  padding: 15px;
+  border: 1px solid black;
+}
+.cube {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: turn-around 5s ease-out infinite backwards;
+  transition: 0.5s all;
+  z-index: 99;
+}
+
+@keyframes turn-around {
+  0% {
+    transform: rotateY(-180deg) rotateX(0);
+  }
+  50% {
+    transform: rotateY(90deg) rotateX(90deg);
+  }
+  75% {
+    transform: rotateY(180deg) rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(-180deg);
+  }
+}
+
+.cube__face {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  line-height: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.cube__face--front {
+  background: rgb(0, 105, 175);
+}
+.cube__face--right {
+  background: hsla(60, 100%, 50%, 1);
+}
+.cube__face--back {
+  background: hsla(120, 100%, 50%, 1);
+}
+.cube__face--left {
+  background: hsla(180, 100%, 50%, 1);
+}
+.cube__face--top {
+  background: rgb(1, 233, 90);
+}
+.cube__face--bottom {
+  background: hsla(300, 100%, 50%, 1);
+}
+
+.cube__face--front {
+  transform: rotateY(0deg) translateZ(25px);
+}
+.cube__face--right {
+  transform: rotateY(90deg) translateZ(25px);
+}
+.cube__face--back {
+  transform: rotateY(180deg) translateZ(25px);
+}
+.cube__face--left {
+  transform: rotateY(-90deg) translateZ(25px);
+}
+.cube__face--top {
+  transform: rotateX(90deg) translateZ(25px);
+}
+.cube__face--bottom {
+  transform: rotateX(-90deg) translateZ(25px);
+}
+
+label {
+  margin-right: 10px;
+}
+
+.fa-heart {
+  color: #f5347f;
+}
+
+.fa-face-smile {
+  color: black;
+}
+
+.fa-turkish-lira-sign {
+  color: yellow;
+}
+
+.clicked {
+  animation: none;
+  animation: heart 2s linear infinite;
+}
+
+@keyframes heart {
+  100% {
+    transform: scale(10px);
+  }
+}
+
+
+img{
+  width: auto;
+  height: 250px;
+  border: 1px solid black;
+  transition: .5s all linear;
+}
+
+.dresses{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid red;
+  padding: 50px;
+  transition: .5s all linear;
+}
+
